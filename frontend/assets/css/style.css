@@ -1,0 +1,374 @@
+/* ============================================================
+   GLOBAL BASE STYLE
+============================================================ */
+
+:root {
+    --bg: #f4f6f9;
+    --card-bg: #ffffff;
+    --border: #e2e5e9;
+
+    /* TYPOGRAPHY SYSTEM */
+    --text-dark: #1e293b;   /* Title, values */
+    --text: #334155;        /* Body text, input label */
+    --text-soft: #475569;   /* Info labels */
+    --text-muted: #64748b;  /* Notes, helper text */
+
+    /* ELEVATION */
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.05);
+
+    /* ACCENTS */
+    --primary: #0d6efd;
+    --primary-hover: #0b5bd9;
+    --warning: #ffb100;
+}
+
+body {
+    background: var(--bg);
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+.navbar {
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    background: var(--card-bg);
+}
+
+#header-username {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+.sidebar {
+    background: #fff;
+    border-right: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+.sidebar .nav-link {
+    padding: 10px 14px;
+    border-radius: 6px;
+    color: var(--text);
+    font-weight: 500;
+    transition: .18s;
+}
+
+.sidebar .nav-link:hover {
+    background: #f1f3f7;
+}
+
+.sidebar .nav-link.active {
+    background: #e7f0ff;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+
+/* ============================================================
+   CONTENT WRAPPER
+============================================================ */
+.content {
+    padding: 30px;
+}
+
+
+/* ============================================================
+   CARD BASE
+============================================================ */
+.card,
+.profile-section,
+.settings-section,
+.page-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+.btn {
+    border-radius: 6px;
+    padding: 9px 16px;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+}
+
+.btn-warning {
+    background: var(--warning);
+    border-color: var(--warning);
+}
+
+.btn-warning:hover {
+    filter: brightness(0.9);
+}
+
+
+/* ============================================================
+   FORM INPUT
+============================================================ */
+.form-control {
+    border-radius: 7px;
+    font-size: 14px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 2px rgba(13,110,253,0.25);
+    border-color: var(--primary);
+}
+
+.form-control::placeholder{
+    color: var(--text-muted);
+}
+
+
+/* ============================================================
+   TABLE
+============================================================ */
+.table {
+    background: #fff;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.table thead th {
+    background: #f8f9fc;
+    border-bottom: 1px solid var(--border);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.table td,
+.table th {
+    vertical-align: middle;
+    padding: 12px;
+    font-size: 14px;
+    color: var(--text);
+}
+
+
+/* ============================================================
+   PROFILE PAGE
+============================================================ */
+.profile-section {
+    padding: 22px 26px;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 14px;
+}
+
+.section-body {
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    font-size: 14px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row .label {
+    color: var(--text-soft);
+    width: 40%;
+    font-weight: 600;
+}
+
+.info-row .value {
+    color: var(--text-dark);
+    font-weight: 700;
+    width: 60%;
+    text-align: right;
+}
+
+.info-row:hover {
+    background: #fafafa;
+}
+
+.small,
+.text-muted {
+    color: var(--text-muted) !important;
+}
+
+
+/* ============================================================
+   SETTINGS PAGE
+============================================================ */
+.settings-section {
+    padding: 25px 28px;
+    margin-bottom: 30px;
+}
+
+.settings-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 18px;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px 25px;
+}
+
+.settings-grid label {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.settings-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+    border-radius: 7px;
+}
+
+
+/* ============================================================
+   DASHBOARD METRICS
+============================================================ */
+.metric-box {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    box-shadow: var(--shadow);
+    transition: transform .15s ease;
+}
+
+.metric-box:hover {
+    transform: translateY(-3px);
+}
+
+.metric-label {
+    font-size: 13px;
+    color: var(--text-soft);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.metric-value {
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+
+/* ============================================================
+   FILTER BAR
+============================================================ */
+.filter-bar {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.filter-bar label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-soft);
+}
+
+
+/* ============================================================
+   LOG VIEWER
+============================================================ */
+.log-box {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 0;
+    overflow: hidden;
+}
+
+.log-view {
+    margin: 0;
+    padding: 20px;
+    height: 420px;
+    overflow-y: auto;
+    background: #f8fafc;
+    color: var(--text-dark);
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+}
+
+
+/* ============================================================
+   STATUS BADGE
+============================================================ */
+.badge-status {
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-success {
+    background: #d1f7d6;
+    color: #0d8a20;
+}
+
+.badge-pending {
+    background: #fff3cd;
+    color: #b38300;
+}
+
+.badge-failed {
+    background: #ffd5d5;
+    color: #c62828;
+}
